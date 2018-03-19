@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Five-day Weather Forecast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="css/weather.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src="js/weather.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid all">
+    <div class="row datadisplay">
+	  <h1 class="text-center">Five-day Weather Forecast using OpenWeatherMap.org</h1>
+      <div class="col-md-12" id="city">
+	  <h2 class="text-center" id="dropdown-text">Select a city:</h2>
+		<div class="object-center">
+			<select id="selectcity" onchange="getWeather(this.value)">
+				<option value="2648579">Glasgow</option>
+				<option selected="selected" value="2650225">Edinburgh</option>
+				<option value="2655984">Belfast</option> 
+				<option value="2644210">Liverpool</option> 
+				<option value="2643741">London</option> 
+				<option value="2643123">Manchester</option> 
+				<option value="2657832">Aberdeen</option> 
+				<option value="2650752">Dundee</option> 
+				<option value="2653822">Cardiff</option> 
+				<option value="2644688">Leeds</option>
+				<option value="2655603">Birmingham</option> 
+				<option value="5856195">Honolulu</option>
+			</select>
+		</div>
+        <h2 class="text-center">Five-day forecast for</h2>
+        <h2 class="text-center data-item" id="city-text"></h2>
+      </div>
+
+      <div class="row">
+	    <div class="col-md-3 " id="displayDate0">
+          <h3 class="text-center data-item" id="displayDate-text0">Today</h3>
+        </div>
+        <div class="col-md-3 " id="weather0">
+          <img src="" id="weatherImg0" class="center-block">
+          <h3 class="text-center data-item" id="weather-text0"></h3>
+        </div>
+        <div class="col-md-3 " id="temp0">
+          <h3 class="text-center">Temperature</h3>
+          <h3 class="text-center data-item" id="temp-text0"></h3>
+        </div>
+        <div class="col-md-3 " id="wind0">
+          <h3 class="text-center">Wind Speed</h3>
+          <h3 class="text-center data-item" id="wind-text0"></h3>
+        </div>
+      </div>
+
+	  <br />
+	
+	  <div class="row">
+	  	 <div class="col-md-3 " id="displayDate1">
+          <h3 class="text-center data-item" id="displayDate-text1">Tomorrow</h3>
+        </div>
+        <div class="col-md-3 " id="weather1">
+          <img src="" id="weatherImg1" class="center-block">
+          <h3 class="text-center data-item" id="weather-text1"></h3>
+        </div>
+        <div class="col-md-3 " id="temp1">
+          <h3 class="text-center">Temperature</h3>
+          <h3 class="text-center data-item" id="temp-text1"></h3>
+        </div>
+        <div class="col-md-3 " id="wind1">
+          <h3 class="text-center">Wind Speed</h3>
+          <h3 class="text-center data-item" id="wind-text1"></h3>
+        </div>
+      </div>
+
+	 <br />
+	
+	  <div class="row">
+	  	 <div class="col-md-3 " id="displayDate2">
+          <h3 class="text-center data-item" id="displayDate-text2"></h3>
+        </div>
+        <div class="col-md-3 " id="weather2">
+          <img src="" id="weatherImg2" class="center-block">
+          <h3 class="text-center data-item" id="weather-text2"></h3>
+        </div>
+        <div class="col-md-3 " id="temp2">
+          <h3 class="text-center">Temperature</h3>
+          <h3 class="text-center data-item" id="temp-text2"></h3>
+        </div>
+        <div class="col-md-3 " id="wind2">
+          <h3 class="text-center">Wind Speed</h3>
+          <h3 class="text-center data-item" id="wind-text2"></h3>
+        </div>
+      </div>
+	
+	<br />
+	
+	  <div class="row">
+	  	 <div class="col-md-3 " id="displayDate3">
+          <h3 class="text-center data-item" id="displayDate-text3"></h3>
+        </div>
+        <div class="col-md-3 " id="weather3">
+          <img src="" id="weatherImg3" class="center-block">
+          <h3 class="text-center data-item" id="weather-text3"></h3>
+        </div>
+        <div class="col-md-3 " id="temp3">
+          <h3 class="text-center">Temperature</h3>
+          <h3 class="text-center data-item" id="temp-text3"></h3>
+        </div>
+        <div class="col-md-3 " id="wind3">
+          <h3 class="text-center">Wind Speed</h3>
+          <h3 class="text-center data-item" id="wind-text3"></h3>
+        </div>
+      </div>
+	
+	<br />
+	
+	  <div class="row">
+	  	 <div class="col-md-3 " id="displayDate4">
+          <h3 class="text-center data-item" id="displayDate-text4"></h3>
+        </div>
+        <div class="col-md-3 " id="weather4">
+          <img src="" id="weatherImg4" class="center-block">
+          <h3 class="text-center data-item" id="weather-text4"></h3>
+        </div>
+        <div class="col-md-3 " id="temp4">
+          <h3 class="text-center">Temperature</h3>
+          <h3 class="text-center data-item" id="temp-text4"></h3>
+        </div>
+        <div class="col-md-3 " id="wind4">
+          <h3 class="text-center">Wind Speed</h3>
+          <h3 class="text-center data-item" id="wind-text4"></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
